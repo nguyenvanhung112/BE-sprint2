@@ -15,8 +15,8 @@ public class Payment {
     private Boolean deleteStatus;
 
     @OneToOne
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
-    private Order order;
+    @JoinColumn(name = "order_phone_id", referencedColumnName = "id")
+    private OrderPhone orderPhone;
 
     public Payment() {
     }
@@ -53,11 +53,11 @@ public class Payment {
         this.deleteStatus = deleteStatus;
     }
 
-    public Order getOrder() {
-        return order;
+    public OrderPhone getOrderPhone() {
+        return orderPhone;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrderPhone(OrderPhone orderPhone) {
+        this.orderPhone = orderPhone;
     }
 }

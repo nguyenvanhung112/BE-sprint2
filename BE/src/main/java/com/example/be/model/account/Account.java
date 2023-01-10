@@ -1,6 +1,7 @@
 package com.example.be.model.account;
 
 import com.example.be.model.users.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,15 +13,36 @@ public class Account {
     private Integer id;
     private String username;
     private String password;
-    @OneToOne(mappedBy = "account")
-    private User users;
 
+    private Integer enabled;
+    @OneToOne(mappedBy = "account")
+    @JsonBackReference
+    private User users;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "account")
+    @JsonBackReference
+    private Set<AccountRole> accountRoles;
     public User getUsers() {
         return users;
     }
 
     public void setUsers(User users) {
         this.users = users;
+    }
+
+    public Integer getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Integer enabled) {
+        this.enabled = enabled;
+    }
+
+    public Set<AccountRole> getAccountRoles() {
+        return accountRoles;
+    }
+
+    public void setAccountRoles(Set<AccountRole> accountRoles) {
+        this.accountRoles = accountRoles;
     }
 
     public Account() {

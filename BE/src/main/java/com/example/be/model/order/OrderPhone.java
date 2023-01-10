@@ -1,6 +1,5 @@
 package com.example.be.model.order;
 
-import com.example.be.model.product.Product;
 import com.example.be.model.product.ProductDetail;
 import com.example.be.model.users.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -8,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 
 @Entity
-public class Order {
+public class OrderPhone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -27,10 +26,10 @@ public class Order {
     @JsonBackReference
     private User user;
 
-    @OneToOne(mappedBy = "order")
+    @OneToOne(mappedBy = "orderPhone")
     @JsonBackReference
     private Payment payment;
-    public Order() {
+    public OrderPhone() {
     }
     public Boolean getDeleteStatus() {
         return deleteStatus;

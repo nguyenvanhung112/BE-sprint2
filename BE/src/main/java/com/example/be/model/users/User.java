@@ -1,7 +1,7 @@
 package com.example.be.model.users;
 
 import com.example.be.model.account.Account;
-import com.example.be.model.order.Order;
+import com.example.be.model.order.OrderPhone;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -48,12 +48,21 @@ public class User {
 
     @JsonBackReference
     @OneToMany(mappedBy = "user")
-    private Set<Order> orders;
+    private Set<OrderPhone> orderPhones;
     @OneToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
+    @JsonBackReference
     private Account account;
 
     public User() {
+    }
+
+    public Set<OrderPhone> getOrderPhones() {
+        return orderPhones;
+    }
+
+    public void setOrderPhones(Set<OrderPhone> orderPhones) {
+        this.orderPhones = orderPhones;
     }
 
     public Integer getId() {
@@ -136,13 +145,7 @@ public class User {
         this.userType = userType;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
-    }
 
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
-    }
 
     public Account getAccount() {
         return account;

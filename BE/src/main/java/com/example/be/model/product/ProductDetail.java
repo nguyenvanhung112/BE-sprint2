@@ -1,6 +1,7 @@
 package com.example.be.model.product;
 
-import com.example.be.model.order.Order;
+
+import com.example.be.model.order.OrderPhone;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -14,7 +15,7 @@ public class ProductDetail {
     private Double price;
 
     private Integer quantity;
-
+    @Column(columnDefinition = "boolean default true")
     private Boolean deleteStatus;
     @ManyToOne
     @JoinColumn(name ="product_id",referencedColumnName = "id")
@@ -29,7 +30,7 @@ public class ProductDetail {
 
     @JsonBackReference
     @OneToMany(mappedBy = "productDetail")
-    private Set<Order> orders;
+    private Set<OrderPhone> orderPhones;
 
     public ProductDetail() {
     }
@@ -90,11 +91,11 @@ public class ProductDetail {
         this.storageCapacity = storageCapacity;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
+    public Set<OrderPhone> getOrderPhones() {
+        return orderPhones;
     }
 
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
+    public void setOrderPhones(Set<OrderPhone> orderPhones) {
+        this.orderPhones = orderPhones;
     }
 }

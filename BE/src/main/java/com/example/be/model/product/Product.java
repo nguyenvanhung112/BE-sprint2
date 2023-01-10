@@ -1,6 +1,5 @@
 package com.example.be.model.product;
 
-import com.example.be.model.order.Order;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -18,7 +17,6 @@ public class Product {
     private String frontCamera;
     private String chip;
     private Integer ram;
-    private Integer storageCapacity;
     private String simCard;
     private String battery;
     private String description;
@@ -110,13 +108,7 @@ public class Product {
         this.ram = ram;
     }
 
-    public Integer getStorageCapacity() {
-        return storageCapacity;
-    }
 
-    public void setStorageCapacity(Integer storageCapacity) {
-        this.storageCapacity = storageCapacity;
-    }
 
     public String getSimCard() {
         return simCard;
