@@ -30,7 +30,7 @@ public class SecurityController {
     @Autowired
     private AuthenticationManager authenticationManager;
     @PostMapping("/signin")
-    public ResponseEntity<?> login(@Validated @RequestBody SignInForm signInForm) {
+    public ResponseEntity<?> login(@RequestBody SignInForm signInForm) {
 
 
         Account accountValidate = accountService.findAccountByUsername(signInForm.getUsername());
