@@ -66,7 +66,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/user/test2").access("hasRole('ROLE_ADMIN')")
 //                .anyRequest()
 //                .authenticated()
-
                 .cors().and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint())
                 .and()
