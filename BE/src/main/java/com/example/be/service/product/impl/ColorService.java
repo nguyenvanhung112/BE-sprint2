@@ -19,7 +19,7 @@ public class ColorService implements IColorService {
     }
 
     @Override
-    public List<Color> getColorListByProductId(Integer id) {
-        return colorRepository.getColorListByProductId(id);
+    public List<Color> getColorListByProductId(Integer id,String storage) {
+        return colorRepository.getColorListByProductId(id,storage);
     }
 }

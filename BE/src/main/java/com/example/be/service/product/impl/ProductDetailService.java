@@ -23,4 +23,19 @@ public class ProductDetailService implements IProductDetailService {
     public List<ProductDetail> getListProductDetailByProductId(Integer productId) {
         return productDetailRepository.getProductDetailByProductId(productId);
     }
+
+    @Override
+    public ProductDetail getProductDetail(Integer id, String storage, String color) {
+        return productDetailRepository.getProductDetail(id, storage, color);
+    }
+
+    @Override
+    public List<IProductDtoDisplay> getListProductDetailByCategory(String category) {
+        return productDetailRepository.getListProductDetailByCategory(category);
+    }
+
+    @Override
+    public List<IProductDtoDisplay> searchProductByName(String nameProduct) {
+        return productDetailRepository.searchProductByName(nameProduct);
+    }
 }

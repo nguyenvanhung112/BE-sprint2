@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRestController {
 
     @GetMapping("/test")
-    @Secured({"ROLE_MEMBER"})
+    @Secured("ROLE_ADMIN")
     public String test1() {
         return "test1";
     }

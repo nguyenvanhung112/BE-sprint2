@@ -75,6 +75,22 @@ public class ProductRestController {
         return new ResponseEntity<>(productDetails, HttpStatus.OK);
     }
 
+    @GetMapping("/product-detail/category/{category}")
+    public ResponseEntity<List<IProductDtoDisplay>> getListProductDetailByProductId(@PathVariable String category) {
+        List<IProductDtoDisplay> productDetails = productDetailService.getListProductDetailByCategory(category);
+        if (productDetails.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(productDetails, HttpStatus.OK);
+    }
+    @GetMapping("/product-detail/search/{nameProduct}")
+    public ResponseEntity<List<IProductDtoDisplay>> searchProduct(@PathVariable String nameProduct) {
+        List<IProductDtoDisplay> productDetails = productDetailService.searchProductByName(nameProduct);
+        if (productDetails.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(productDetails, HttpStatus.OK);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Integer id) {
         Product product = productService.getProductById(id);
@@ -93,12 +109,21 @@ public class ProductRestController {
         return new ResponseEntity<>(storageCapacityList, HttpStatus.OK);
     }
 
-    @GetMapping("color/{id}")
-    public ResponseEntity<List<Color>> getColorListByProductId(@PathVariable Integer id) {
-        List<Color> colorList = colorService.getColorListByProductId(id);
+    @GetMapping("color-Productdetails")
+    public ResponseEntity<List<Color>> getColorListByProductId(@RequestParam(value = "id") Integer id, @RequestParam(value = "storage") String storage) {
+        List<Color> colorList = colorService.getColorListByProductId(id, storage);
         if (colorList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(colorList, HttpStatus.OK);
+    }
+
+    @GetMapping("productDetail-find")
+    public ResponseEntity<ProductDetail> getProductDetail(@RequestParam(value = "id") Integer id, @RequestParam(value = "storage") String storage, @RequestParam(value = "color") String color) {
+        ProductDetail productDetail = productDetailService.getProductDetail(id, storage, color);
+        if (productDetail == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(productDetail, HttpStatus.OK);
     }
 }

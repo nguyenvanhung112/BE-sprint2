@@ -9,4 +9,10 @@ public interface IProductDetailService {
     List<IProductDtoDisplay> getListProductDisplayHome();
 
     List<ProductDetail> getListProductDetailByProductId(Integer productId);
+
+    ProductDetail getProductDetail(Integer id, String storage, String color);
+
+    List<IProductDtoDisplay> getListProductDetailByCategory(String category);
+
+    List<IProductDtoDisplay> searchProductByName(String nameProduct);
 }

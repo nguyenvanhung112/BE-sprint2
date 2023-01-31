@@ -11,6 +11,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String releaseDate;
     private String screen;
     private String operatingSystem;
     private String rearCamera;
@@ -108,7 +109,13 @@ public class Product {
         this.ram = ram;
     }
 
+    public String getReleaseDate() {
+        return releaseDate;
+    }
 
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 
     public String getSimCard() {
         return simCard;
