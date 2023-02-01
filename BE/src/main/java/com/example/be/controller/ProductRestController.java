@@ -3,9 +3,13 @@ package com.example.be.controller;
 import com.example.be.dto.IProductDtoDisplay;
 import com.example.be.dto.ProductDisPlayDto;
 import com.example.be.model.product.*;
+import com.example.be.payload.request.FormSearch;
 import com.example.be.service.product.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -83,11 +87,20 @@ public class ProductRestController {
         }
         return new ResponseEntity<>(productDetails, HttpStatus.OK);
     }
-    @GetMapping("/product-detail/search/{nameProduct}")
-    public ResponseEntity<List<IProductDtoDisplay>> searchProduct(@PathVariable String nameProduct) {
-        List<IProductDtoDisplay> productDetails = productDetailService.searchProductByName(nameProduct);
+//    @GetMapping("/product-detail/search/{nameProduct}")
+//    public ResponseEntity<List<IProductDtoDisplay>> searchProduct(@PathVariable String nameProduct) {
+//        List<IProductDtoDisplay> productDetails = productDetailService.searchProductByName(nameProduct);
+//        if (productDetails.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(productDetails, HttpStatus.OK);
+//    }
+
+    @PostMapping("/search")
+    public ResponseEntity<Page<IProductDtoDisplay>> searchProductByCategoryAndPriceAndName(@RequestBody FormSearch formSearch, @PageableDefault(value = 5) Pageable pageable) {
+        Page<IProductDtoDisplay> productDetails = productDetailService.searchProductByCategoryAndPriceAndName(formSearch,pageable);
         if (productDetails.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         return new ResponseEntity<>(productDetails, HttpStatus.OK);
     }

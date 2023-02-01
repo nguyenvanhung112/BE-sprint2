@@ -2,6 +2,9 @@ package com.example.be.repository.product;
 
 import com.example.be.dto.IProductDtoDisplay;
 import com.example.be.model.product.ProductDetail;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -38,4 +41,16 @@ public interface IProductDetailRepository extends JpaRepository<ProductDetail, I
     @Query(value = "select productdisplay.id,min(productdisplay.price) as price,productdisplay.name,productdisplay.category, group_concat(img_url_product.url) as urls from productdisplay " +
             "join img_url_product on img_url_product.product_id = productdisplay.id where productdisplay.name like %:nameProduct% group by productdisplay.id order by productdisplay.release_date desc", nativeQuery = true)
     List<IProductDtoDisplay> searchProductByName(@Param("nameProduct") String nameProduct);
+
+    @Query(value = "select productdisplay.id,min(productdisplay.price) as price,productdisplay.name,productdisplay.category, group_concat(img_url_product.url) as urls ,productdisplay.release_date from `productdisplay` " +
+            "join `img_url_product` on img_url_product.product_id = productdisplay.id " +
+            "where productdisplay.name like %:name% and productdisplay.category like %:category% and productdisplay.price between :firstPrice and :secondPrice " +
+            "group by productdisplay.id " +
+            "order by productdisplay.release_date desc", nativeQuery = true)
+    Page<IProductDtoDisplay> searchProductByCategoryAndPriceAndName(
+            @Param("name") String name,
+            @Param("category")String category,
+            @Param("firstPrice")String firstPrice,
+            @Param("secondPrice")String secondPrice,
+            Pageable pageable);
 }
