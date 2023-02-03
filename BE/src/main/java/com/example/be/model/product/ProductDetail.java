@@ -1,6 +1,7 @@
 package com.example.be.model.product;
 
 
+import com.example.be.model.order.OrderDetail;
 import com.example.be.model.order.OrderPhone;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -28,11 +29,18 @@ public class ProductDetail {
     @JoinColumn(name ="storage_capacity_id",referencedColumnName = "id")
     private StorageCapacity storageCapacity;
 
-    @JsonBackReference
     @OneToMany(mappedBy = "productDetail")
-    private Set<OrderPhone> orderPhones;
-
+    @JsonBackReference
+    private Set<OrderDetail> orderDetails;
     public ProductDetail() {
+    }
+
+    public Set<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(Set<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 
     public Integer getId() {
@@ -91,11 +99,4 @@ public class ProductDetail {
         this.storageCapacity = storageCapacity;
     }
 
-    public Set<OrderPhone> getOrderPhones() {
-        return orderPhones;
-    }
-
-    public void setOrderPhones(Set<OrderPhone> orderPhones) {
-        this.orderPhones = orderPhones;
-    }
 }

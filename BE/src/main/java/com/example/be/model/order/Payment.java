@@ -1,5 +1,7 @@
 package com.example.be.model.order;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,14 +13,23 @@ public class Payment {
     private String shippingDescription;
     private Boolean paymentStatus;
 
-    @Column(columnDefinition = "boolean default true")
+
     private Boolean deleteStatus;
 
     @OneToOne
     @JoinColumn(name = "order_phone_id", referencedColumnName = "id")
+    @JsonBackReference
     private OrderPhone orderPhone;
 
     public Payment() {
+    }
+
+    public OrderPhone getOrderPhone() {
+        return orderPhone;
+    }
+
+    public void setOrderPhone(OrderPhone orderPhone) {
+        this.orderPhone = orderPhone;
     }
 
     public Integer getId() {
@@ -53,11 +64,5 @@ public class Payment {
         this.deleteStatus = deleteStatus;
     }
 
-    public OrderPhone getOrderPhone() {
-        return orderPhone;
-    }
 
-    public void setOrderPhone(OrderPhone orderPhone) {
-        this.orderPhone = orderPhone;
-    }
 }

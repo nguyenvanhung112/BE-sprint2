@@ -46,7 +46,7 @@ public class User {
     @JoinColumn(name = "user_type_id", referencedColumnName = "id")
     private UserType userType;
 
-    @JsonBackReference
+
     @OneToMany(mappedBy = "user")
     private Set<OrderPhone> orderPhones;
     @OneToOne

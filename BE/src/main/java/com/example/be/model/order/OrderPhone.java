@@ -5,6 +5,7 @@ import com.example.be.model.users.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class OrderPhone {
@@ -12,14 +13,12 @@ public class OrderPhone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer quantity;
     @Column(columnDefinition = "boolean default true")
     private Boolean deleteStatus;
 
-    @ManyToOne
-    @JoinColumn(name = "product_detail_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "orderPhone")
     @JsonBackReference
-    private ProductDetail productDetail;
+    private Set<OrderDetail> orderDetail;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -27,10 +26,18 @@ public class OrderPhone {
     private User user;
 
     @OneToOne(mappedBy = "orderPhone")
-    @JsonBackReference
     private Payment payment;
     public OrderPhone() {
     }
+
+    public Set<OrderDetail> getOrderDetail() {
+        return orderDetail;
+    }
+
+    public void setOrderDetail(Set<OrderDetail> orderDetail) {
+        this.orderDetail = orderDetail;
+    }
+
     public Boolean getDeleteStatus() {
         return deleteStatus;
     }
@@ -45,22 +52,6 @@ public class OrderPhone {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public ProductDetail getProductDetail() {
-        return productDetail;
-    }
-
-    public void setProductDetail(ProductDetail productDetail) {
-        this.productDetail = productDetail;
     }
 
     public User getUser() {
