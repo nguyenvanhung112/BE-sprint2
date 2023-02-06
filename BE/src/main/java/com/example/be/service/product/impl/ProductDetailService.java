@@ -50,6 +50,11 @@ public class ProductDetailService implements IProductDetailService {
         return productDetailRepository.searchProductByCategoryAndPriceAndName(formSearch.getName(),formSearch.getCategory(),firstPrice,secondPrice, pageable);
     }
 
+    @Override
+    public ProductDetail getProductDetailById(Integer productDetailId) {
+        return productDetailRepository.findById(productDetailId).orElse(null);
+    }
+
 //    @Override
 //    public Page<IProductDtoDisplay> searchProductByCategoryAndPriceAndName(FormSearch formSearch, org.springframework.data.domain.Pageable pageable) {
 //        String price[] = formSearch.getPrice().split(",");

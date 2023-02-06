@@ -13,5 +13,7 @@ import java.util.List;
 @Repository
 @Transactional
 public interface IOrderRepository extends JpaRepository<OrderPhone, Integer> {
-
+@Query(value = "select order_phone.* from order_phone join payment on order_phone.payment_id = payment.id " +
+        "join `user` on user.id = order_phone.user_id where order_phone.user_id = :idUser and payment.payment_status = 0",nativeQuery = true)
+    OrderPhone getOrder(@Param("idUser") Integer user);
 }

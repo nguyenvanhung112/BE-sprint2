@@ -25,7 +25,10 @@ public class OrderPhone {
     @JsonBackReference
     private User user;
 
-    @OneToOne(mappedBy = "orderPhone")
+
+    @OneToOne
+    @JoinColumn(name = "payment_id", referencedColumnName = "id")
+    @JsonBackReference
     private Payment payment;
     public OrderPhone() {
     }

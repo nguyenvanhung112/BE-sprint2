@@ -21,4 +21,6 @@ public interface IProductDetailService {
 
 
     Page<IProductDtoDisplay> searchProductByCategoryAndPriceAndName(FormSearch formSearch, Pageable pageable);
+
+    ProductDetail getProductDetailById(Integer productDetailId);
 }

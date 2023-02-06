@@ -16,9 +16,7 @@ public class Payment {
 
     private Boolean deleteStatus;
 
-    @OneToOne
-    @JoinColumn(name = "order_phone_id", referencedColumnName = "id")
-    @JsonBackReference
+    @OneToOne(mappedBy = "payment")
     private OrderPhone orderPhone;
 
     public Payment() {
