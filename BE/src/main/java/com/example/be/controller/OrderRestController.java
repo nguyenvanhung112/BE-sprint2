@@ -37,7 +37,7 @@ public class OrderRestController {
     private IProductDetailService productDetailService;
 
     @GetMapping("cart/{id}")
-    public ResponseEntity<List<OrderDetail>> getListProductDetailByProductId(@PathVariable String id) {
+    public ResponseEntity<List<OrderDetail>> getListProductDetailByUserId(@PathVariable String id) {
         List<OrderDetail> orderDetails = orderService.getCartByUserId(id);
         if (orderDetails.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);

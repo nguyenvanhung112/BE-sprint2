@@ -29,7 +29,8 @@ public class SecurityController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-        @PostMapping("/signin")
+
+    @PostMapping("/signin")
     public ResponseEntity<?> login(@RequestBody SignInForm signInForm) {
 
 

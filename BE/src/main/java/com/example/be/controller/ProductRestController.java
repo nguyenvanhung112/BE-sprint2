@@ -97,7 +97,7 @@ public class ProductRestController {
 //    }
 
     @PostMapping("/search")
-    public ResponseEntity<Page<IProductDtoDisplay>> searchProductByCategoryAndPriceAndName(@RequestBody FormSearch formSearch, @PageableDefault(value = 5) Pageable pageable) {
+    public ResponseEntity<Page<IProductDtoDisplay>> searchProductByCategoryAndPriceAndName(@RequestBody FormSearch formSearch, @PageableDefault(value = 6) Pageable pageable) {
         Page<IProductDtoDisplay> productDetails = productDetailService.searchProductByCategoryAndPriceAndName(formSearch,pageable);
         if (productDetails.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);

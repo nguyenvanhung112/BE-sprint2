@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d4336d1-bbb6-4c52-bbfe-30bed2e06fdc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/OrderRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/OrderRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/dto/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/dto/OrderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/model/order/OrderPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/model/order/OrderPhone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/model/order/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/model/order/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderDetailReposistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderDetailReposistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IPaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IPaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/product/IProductDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/product/IProductDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/product/impl/ProductDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/product/impl/ProductDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/ProductRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/SecurityController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/sprint_2/BE-sprint2",
+    "last_opened_file_path": "D:/Codegym/C0622G1-NguyenVanHung/Module2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,6 +78,7 @@
       <updated>1675219279958</updated>
       <workItem from="1675219280979" duration="42000" />
       <workItem from="1675657675960" duration="12469000" />
+      <workItem from="1675736020182" duration="10120000" />
     </task>
     <servers />
   </component>
