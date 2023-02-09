@@ -2,6 +2,7 @@ package com.example.be.service.order.impl;
 
 import com.example.be.model.order.OrderDetail;
 import com.example.be.model.order.OrderPhone;
+import com.example.be.model.order.Payment;
 import com.example.be.model.product.ProductDetail;
 import com.example.be.repository.order.IOrderDetailReposistory;
 import com.example.be.repository.order.IOrderRepository;
@@ -38,5 +39,31 @@ public class OrderService implements IOrderService {
     @Override
     public void addOrderDetail(OrderDetail orderDetail) {
         orderDetailReposistory.save(orderDetail);
+    }
+
+    @Override
+    public List<OrderDetail> getHistory(String id) {
+        return orderDetailReposistory.getHistory(id);
+    }
+
+
+    @Override
+    public OrderDetail getOrderDetail(Integer id) {
+        return orderDetailReposistory.findById(id).orElse(null);
+    }
+
+    @Override
+    public void deleteOrderDetail(OrderDetail orderDetail) {
+        orderDetailReposistory.delete(orderDetail);
+    }
+
+    @Override
+    public void payment(Integer id) {
+         orderRepository.payment(id);
+    }
+
+    @Override
+    public Payment getPaymentByUserId(Integer id) {
+        return orderRepository.getPaymentByUserId(id);
     }
 }

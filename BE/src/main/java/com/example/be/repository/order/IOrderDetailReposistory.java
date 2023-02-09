@@ -12,13 +12,18 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface IOrderDetailReposistory extends JpaRepository<OrderDetail,Integer> {
+public interface IOrderDetailReposistory extends JpaRepository<OrderDetail, Integer> {
     @Query(value = "select order_detail.* from order_detail \n" +
             "join `order_phone` on order_phone.id = order_detail.order_phone_id\n" +
             "join `user` on `user`.id = order_phone.user_id\n" +
             "join `payment` on payment.id = order_phone.payment_id \n" +
-            "join `product_detail` on product_detail.id = order_detail.product_detail_id where payment.payment_status = 0 and user.id = :userId",nativeQuery = true)
+            "join `product_detail` on product_detail.id = order_detail.product_detail_id where payment.payment_status = 0 and user.id = :userId", nativeQuery = true)
     List<OrderDetail> getCartByUserId(@Param("userId") String id);
 
-
+    @Query(value = "select order_detail.* from order_detail \n" +
+            "join `order_phone` on order_phone.id = order_detail.order_phone_id\n" +
+            "join `user` on `user`.id = order_phone.user_id\n" +
+            "join `payment` on payment.id = order_phone.payment_id \n" +
+            "join `product_detail` on product_detail.id = order_detail.product_detail_id where payment.payment_status = 1 and user.id = :userId", nativeQuery = true)
+    List<OrderDetail> getHistory(@Param("userId") String id);
 }

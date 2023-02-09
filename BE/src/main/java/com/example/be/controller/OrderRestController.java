@@ -93,4 +93,43 @@ public class OrderRestController {
 
         return new ResponseEntity<>(orderPhone, HttpStatus.OK);
     }
+
+    @GetMapping("history/{id}")
+    public ResponseEntity<List<OrderDetail>> getHistory(@PathVariable String id) {
+        List<OrderDetail> orderDetails = orderService.getHistory(id);
+        if (orderDetails.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity<>(orderDetails, HttpStatus.OK);
+    }
+
+    @GetMapping("deleteOrderDetail/{id}")
+    public ResponseEntity<OrderDetail> deleteOrderDetail(@PathVariable Integer id) {
+        OrderDetail orderDetail = orderService.getOrderDetail(id);
+        orderService.deleteOrderDetail(orderDetail);
+        return new ResponseEntity<>(orderDetail, HttpStatus.OK);
+    }
+
+    @GetMapping("payment/{id}")
+    public ResponseEntity<Payment> payment(@PathVariable Integer id) {
+        Payment payment = paymentService.getPaymentByUserId(id);
+        payment.setPaymentStatus(true);
+        paymentService.addPayment(payment);
+        return new ResponseEntity<>(payment, HttpStatus.OK);
+    }
+
+    @GetMapping("minus/{id}")
+    public ResponseEntity<OrderDetail> minus(@PathVariable Integer id) {
+        OrderDetail orderDetail = orderService.getOrderDetail(id);
+        orderDetail.setQuantity(orderDetail.getQuantity() - 1);
+        orderService.addOrderDetail(orderDetail);
+        return new ResponseEntity<>(orderDetail, HttpStatus.OK);
+    }
+    @GetMapping("plus/{id}")
+    public ResponseEntity<OrderDetail> plus(@PathVariable Integer id) {
+        OrderDetail orderDetail = orderService.getOrderDetail(id);
+        orderDetail.setQuantity(orderDetail.getQuantity() + 1);
+        orderService.addOrderDetail(orderDetail);
+        return new ResponseEntity<>(orderDetail, HttpStatus.OK);
+    }
 }
