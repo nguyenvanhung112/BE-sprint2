@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d4336d1-bbb6-4c52-bbfe-30bed2e06fdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/ProductRestController.java" afterDir="false" />
-    </list>
+    <list default="true" id="4d4336d1-bbb6-4c52-bbfe-30bed2e06fdc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Codegym/C0622G1-NguyenVanHung/Module2",
+    "last_opened_file_path": "D:/sprint_2/BE-sprint2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +92,7 @@
       <workItem from="1677638216493" duration="853000" />
       <workItem from="1677684288812" duration="40000" />
       <workItem from="1677684826868" duration="1400000" />
+      <workItem from="1677731128529" duration="340000" />
     </task>
     <servers />
   </component>
