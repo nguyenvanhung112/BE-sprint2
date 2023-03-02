@@ -7,6 +7,7 @@ import com.example.be.payload.request.FormSearch;
 import com.example.be.service.product.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -20,6 +21,7 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("api/v1/products")
 public class ProductRestController {
+
     @Autowired
     private IProductDetailService productDetailService;
     @Autowired

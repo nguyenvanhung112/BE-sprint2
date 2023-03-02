@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4d4336d1-bbb6-4c52-bbfe-30bed2e06fdc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/OrderRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/OrderRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderDetailReposistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderDetailReposistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IPaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/repository/order/IPaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IPaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/IPaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/service/order/impl/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/src/main/java/com/example/be/controller/ProductRestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +30,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -55,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Codegym/C0622G1-NguyenVanHung/module3/Module3",
+    "last_opened_file_path": "D:/Codegym/C0622G1-NguyenVanHung/Module2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,6 +88,13 @@
       <workItem from="1675825012787" duration="7121000" />
       <workItem from="1675859421099" duration="4416000" />
       <workItem from="1675907005265" duration="4826000" />
+      <workItem from="1675991573188" duration="2275000" />
+      <workItem from="1676343401330" duration="64000" />
+      <workItem from="1676874758291" duration="419000" />
+      <workItem from="1677466510051" duration="613000" />
+      <workItem from="1677638216493" duration="853000" />
+      <workItem from="1677684288812" duration="40000" />
+      <workItem from="1677684826868" duration="1400000" />
     </task>
     <servers />
   </component>
