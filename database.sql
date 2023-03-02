@@ -178,3 +178,8 @@ INSERT INTO `sprint2`.`order_detail` (`id`, `quantity`, `order_phone_id`, `produ
 INSERT INTO `sprint2`.`payment` (`id`, `delete_status`, `payment_status`, `shipping_description`) VALUES ('1', 1, 0, 'Giao vào buổi sáng');
 INSERT INTO `sprint2`.`payment` (`id`, `delete_status`, `payment_status`, `shipping_description`) VALUES ('2', 1,0, 'Giao vào buổi sáng');
 INSERT INTO `sprint2`.`payment` (`id`, `delete_status`, `payment_status`, `shipping_description`) VALUES ('3', 1, 0, 'Giao vào buổi sáng');
+
+use sprint2;
+create view productdisplay as select product.id as id,product_detail.price as price,product.`name` as `name`,category.`name` as category,product.release_date as release_date from product_detail
+join product on product.id = product_detail.product_id
+join category on category.id = product.category_id order by product_detail.price;
